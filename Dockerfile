@@ -5,6 +5,7 @@ RUN sed -i -e 's/# en_US.UTF-8 UTF-8/en_US.UTF-8 UTF-8/' /etc/locale.gen
 RUN sed -i -e 's/# zh_TW.UTF-8 UTF-8/zh_TW.UTF-8 UTF-8/' /etc/locale.gen
 RUN sed -i -e 's/# zh_TW BIG5/zh_TW BIG5/' /etc/locale.gen
 RUN dpkg-reconfigure --frontend=noninteractive locales
+RUN update-locale LANG=en_US.UTF-8
 
 ENV LANG en_US.UTF-8
 ENV LANGUAGE en_US.UTF-8
